@@ -35,7 +35,7 @@ jobs:
       VSTS_HTTP_RETRY: 5
       VSTS_HTTP_TIMEOUT: 200
       BUILD_TYPE: Release
-      REPO_DIR: ${{ env.working-directory }}
+      REPO_DIR: $(Build.Repository.LocalPath)
       OPENVINO_CONTRIB_REPO_DIR: ${{ env.REPO_DIR) }}/../openvino_contrib
       MODELS_PATH: ${{ env.REPO_DIR }}/../testdata
       WORK_DIR: ${{ env.Pipeline.Workspace }}/_w
