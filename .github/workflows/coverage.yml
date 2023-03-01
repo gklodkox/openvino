@@ -119,7 +119,7 @@ jobs:
         # 'clang' compiler is to check that samples can be built using it
         sudo apt --assume-yes install openjdk-11-jdk libbz2-dev clang
         # For opencv-python: python3-setuptools and pip upgrade
-        wget https://www.python.org/ftp/python/"${{ PYTHON_VERSION }}"/Python-"${{ env.PYTHON_VERSION }}".tgz
+        wget https://www.python.org/ftp/python/"${{ env.PYTHON_VERSION }}"/Python-"${{ env.PYTHON_VERSION }}".tgz
         tar -xzf Python-"${{ env.PYTHON_VERSION }}".tgz
         cd Python-"${{ env.PYTHON_VERSION }}" || exit
         ./configure --enable-optimizations --prefix=/usr/local --enable-shared LDFLAGS="-Wl,-rpath /usr/local/lib"
