@@ -28,7 +28,7 @@ jobs:
           - ON
           - OFF
       max-parallel: 2
-    runs-on: LIN_VMSS_VENV_F16S_U20_WU2
+    runs-on: ubuntu-20.04
     timeout-minutes: 120
     env:
       system.debug: true
