@@ -36,24 +36,24 @@ jobs:
       VSTS_HTTP_TIMEOUT: 200
       BUILD_TYPE: Release
       REPO_DIR: $(Build.Repository.LocalPath)
-      OPENVINO_CONTRIB_REPO_DIR: ${{ env.REPO_DIR) }}/../openvino_contrib
-      MODELS_PATH: ${{ env.REPO_DIR }}/../testdata
-      WORK_DIR: ${{ env.Pipeline.Workspace }}/_w
-      BUILD_DIR: ${{ env.WORK_DIR }}/build
-      BUILD_SAMPLES_DIR: ${{ env.WORK_DIR }}/build_samples
-      BUILD_LAYER_TESTS_DIR: ${{ env.WORK_DIR }}/build_layer_tests
-      BUILD_SAMPLES_TESTS_DIR: ${{ env.WORK_DIR }}/build_samples_tests
-      INSTALL_DIR: ${{ env.WORK_DIR }}/install_pkg
-      INSTALL_TEST_DIR: ${{ env.INSTALL_DIR }}/tests
-      LAYER_TESTS_DIR: ${{ env.INSTALL_TEST_DIR }}/layer_tests
-      SETUPVARS: ${{ env.INSTALL_DIR }}/setupvars.sh
+      OPENVINO_CONTRIB_REPO_DIR: $(Build.Repository.LocalPath)/../openvino_contrib
+      MODELS_PATH: $(Build.Repository.LocalPath)/../testdata
+      WORK_DIR: $(Pipeline.Workspace)/_w
+      BUILD_DIR: $(Pipeline.Workspace)/_w/build
+      BUILD_SAMPLES_DIR: $(Pipeline.Workspace)/build_samples
+      BUILD_LAYER_TESTS_DIR: $(Pipeline.Workspace)/build_layer_tests
+      BUILD_SAMPLES_TESTS_DIR: $(Pipeline.Workspace)/build_samples_tests
+      INSTALL_DIR: $(Pipeline.Workspace)/install_pkg
+      INSTALL_TEST_DIR: $(Pipeline.Workspace)/install_pkg/tests
+      LAYER_TESTS_DIR: $(Pipeline.Workspace)/install_pkg/tests/layer_tests
+      SETUPVARS: $(Pipeline.Workspace)/install_pkg/setupvars.sh
       TMP_DIR: /mnt/tmp
       SHARE_DIR: /mount/cinfsshare/onnxtestdata
-      CCACHE_DIR: ${{ env.SHARE_DIR }}/ccache/master/linux
+      CCACHE_DIR: /mount/cinfsshare/onnxtestdata/ccache/master/linux
       CMAKE_VERSION: 3.24.0
-      BUILD_PYTHON: ${{ env.WORK_DIR }}/build_python
-      INSTALL_PYTHON: ${{ env.INSTALL_OPENVINO }}/extras/python
-      PY_VENV: ${{ env.WORK_DIR }}/.venv
+      BUILD_PYTHON: $(Pipeline.Workspace)/_w/build_python
+      INSTALL_PYTHON: $(INSTALL_OPENVINO)/extras/python
+      PY_VENV: $(Pipeline.Workspace)/_w/.venv
       PYTHON_VERSION: 3.10.7
     steps:
     - uses: actions/checkout@v3
