@@ -184,7 +184,7 @@ jobs:
           -S ${{ env.REPO_DIR }}
           -B ${{ env.BUILD_DIR }}
     - name: List temp SDKs
-      run: ls -alR ${{ REPO_DIR }}/temp/
+      run: ls -alR ${{ env.REPO_DIR }}/temp/
 
     - name: Clean ccache stats
       run: ccache --zero-stats --max-size=50G --show-config
