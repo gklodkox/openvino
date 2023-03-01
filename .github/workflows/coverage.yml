@@ -143,8 +143,8 @@ jobs:
         # For running ONNX frontend unit tests
         python3 -m pip install -r ${{ env.REPO_DIR }}/src/frontends/onnx/tests/requirements.txt
         # For MO unit tests
-        python3 -m pip install -r ${{ REPO_DIR }}/tools/mo/requirements.txt
-        python3 -m pip install -r ${{ REPO_DIR }}/tools/mo/requirements_dev.txt
+        python3 -m pip install -r ${{ env.REPO_DIR }}/tools/mo/requirements.txt
+        python3 -m pip install -r ${{ env.REPO_DIR }}/tools/mo/requirements_dev.txt
         # Speed up build
         wget https://github.com/ninja-build/ninja/releases/download/v1.10.2/ninja-linux.zip
         unzip ninja-linux.zip
